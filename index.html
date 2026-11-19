@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5efe2">
+  <title>Mini Agent City</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">LIVE SIMULATION</p>
+        <h1>Mini Agent City</h1>
+      </div>
+      <div class="clock-wrap">
+        <span class="status-dot"></span>
+        <div>
+          <span id="dayLabel">Day 1</span>
+          <strong id="timeLabel">08:00</strong>
+        </div>
+      </div>
+    </header>
+
+    <section class="workspace">
+      <aside class="left-panel">
+        <div class="panel-heading">
+          <span>Citizens</span>
+          <span id="citizenCount">3 active</span>
+        </div>
+        <div id="agentList" class="agent-list"></div>
+
+        <div class="relationships">
+          <div class="panel-heading"><span>Relationships</span></div>
+          <div id="relationshipList"></div>
+        </div>
+      </aside>
+
+      <section class="city-column">
+        <div class="city-toolbar">
+          <div class="time-scale">
+            <button class="speed-btn active" data-speed="1">1×</button>
+            <button class="speed-btn" data-speed="2">2×</button>
+            <button class="speed-btn" data-speed="4">4×</button>
+          </div>
+          <button id="pauseBtn" class="pause-btn" aria-label="Pause simulation">
+            <span id="pauseIcon">Ⅱ</span>
+          </button>
+        </div>
+
+        <div id="city" class="city" aria-label="Interactive city map">
+          <div class="map-grid"></div>
+          <div class="road road-horizontal road-one"></div>
+          <div class="road road-horizontal road-two"></div>
+          <div class="road road-vertical road-three"></div>
+          <div class="road road-vertical road-four"></div>
+
+          <div class="location" data-location="Cafe" style="--x: 12%; --y: 17%">
+            <span class="building cafe"><i>☕</i></span><b>Café</b>
+          </div>
+          <div class="location" data-location="Library" style="--x: 67%; --y: 13%">
+            <span class="building library"><i>▥</i></span><b>Library</b>
+          </div>
+          <div class="location" data-location="Park" style="--x: 70%; --y: 68%">
+            <span class="building park"><i>♣</i></span><b>Park</b>
+          </div>
+          <div class="location" data-location="Market" style="--x: 12%; --y: 72%">
+            <span class="building market"><i>⌂</i></span><b>Market</b>
+          </div>
+
+          <div id="agentLayer"></div>
+        </div>
+      </section>
+
+      <aside class="right-panel">
+        <div class="panel-heading"><span>Selected citizen</span></div>
+        <div id="detailPanel" class="detail-panel"></div>
+        <div class="panel-heading event-heading"><span>City activity</span></div>
+        <div id="eventLog" class="event-log"></div>
+      </aside>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
